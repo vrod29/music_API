@@ -1,4 +1,5 @@
 
+
 .jumbotron-fluid {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#661d70+0,9d006a+50,e90053+100 */
 background: #661d70; /* Old browsers */
@@ -7,6 +8,7 @@ background: -webkit-linear-gradient(top, #661d70 0%,#9d006a 50%,#e90053 100%); /
 background: linear-gradient(to bottom, #661d70 0%,#9d006a 50%,#e90053 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#661d70', endColorstr='#e90053',GradientType=0 ); /* IE6-9 */
 background-repeat: no-repeat;
+height: 100vh;
 }
 
 p {

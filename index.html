@@ -1,9 +1,9 @@
 <?php
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "http://api.musixmatch.com/ws/1.1/artist.search?q_artist=onerepublic&page_size=5&apikey=8f3df11a62eade09ece60f73582d6b1a");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-curl_setopt($ch, CURLOPT_HEADER, FALSE);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $response = curl_exec($ch);
 curl_close($ch);
 
@@ -25,7 +25,7 @@ curl_close($ch);
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <title>Hello, world!</title>
+  <title>1-Stop Music</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@ curl_close($ch);
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">about us<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">ABOUT US<span class="sr-only">(current)</span></a>
             </li>
           </ul>
         </div>
@@ -67,25 +67,77 @@ curl_close($ch);
   </div>
 
     <!-- ///pic/bio// -->
-<center>
-
-    <div class="row ml-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 text-center">
         <div class="card">
-            <img src="brunomarsPic.jpg" width="300" alt="BrunoMarsPic">
-            <h1>Bruno Mars</h1></br>
-            <p class="title">Artist, Musician</p> </br>
-            <p>Harvard University </br>Bio goes here
-                <div style="margin: 24px 0;">
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                </div>
-            </p>
+          <img class="card-img-top" src="brunomarsPic.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h1>Bruno Mars</h1>
+        <div id="social-media">
+          <img class="twitter mx-1" src="assets/twitter.svg" alt="" href="" width="30px" height="30px">
+          <img class="facebok mx-1" src="assets/facebook.svg" alt="" href="" width="30px" height="30px">
+          <img class="instagram mx-1" src="assets/instagram.svg" alt="" href="" width="30px" height="30px">
+        </div>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Album</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+        <tbody>
+          <tr>
+            <td>Mark</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>Mark</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>Mark</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
     </div>
+  </div>
+<div class="container">
+  <div class="row">
+    <h1>Touring Info</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <h1>Video Section</h1>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</center>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

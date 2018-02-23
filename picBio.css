@@ -1,3 +1,5 @@
+/* profile pic */
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
@@ -32,3 +34,50 @@ a {
 button:hover, a:hover {
     opacity: 0.7;
 }
+
+
+/* discography and boi same height css */
+
+.col-container {
+    display: table; /* Make the container element behave like a table */
+    width: 100%; /* Set full-width to expand the whole page */
+}
+
+.col {
+    display: table-cell; /* Make elements inside the container behave like table cells */
+}
+
+
+/* tour info css */
+.myBox {
+border: none;
+padding: 5px;
+font: 24px/36px sans-serif;
+width: 200px;
+height: 200px;
+overflow: scroll;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+
+::-webkit-scrollbar-track {
+border: 1px solid yellowgreen;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: yellowgreen;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #88ba1c;
+}
+
+
+
+/* //////////////* videos scrolling box */

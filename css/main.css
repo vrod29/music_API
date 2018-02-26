@@ -57,3 +57,8 @@ p {
   line-height: 1.2;
   text-align: center;
 }
+
+.scroll-discography {
+  height: 300px;
+  overflow-y: auto;
+}

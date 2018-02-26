@@ -138,6 +138,7 @@
 
     $("#search").on("click", function(){
       artistName = $("#query").val();
+      var artistName = artistName.split(' ').join('+');
       $("#query").val("");
 
       $.ajax({

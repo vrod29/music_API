@@ -1,172 +1,139 @@
-<?php
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "http://api.musixmatch.com/ws/1.1/artist.search?q_artist=onerepublic&page_size=5&apikey=8f3df11a62eade09ece60f73582d6b1a");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HEADER, false);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-$response = curl_exec($ch);
-curl_close($ch);
+<!doctype html>
+<html lang="en">
 
-?>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="transparentBavbar.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!doctype html>
-    <html lang="en">
+  <title>1-Stop Music</title>
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="transparentBavbar.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="pioBio.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-        <title>1-Stop Music</title>
+<body>
 
-    </head>
-
-    <body>
-
-        <!--  Jumbotron & Navbar -->
-        <div class="jumbotron jumbotron-fluid pt-3">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-                    <a class="navbar-brand" href="#">1-Stop Music</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!--  Jumbotron & Navbar -->
+  <div class="jumbotron jumbotron-fluid pt-3">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <a class="navbar-brand" href="#">1-Stop Music</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" id="menu-item" href="#">ABOUT US<span class="sr-only">(current)</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="container mt-5">
-                <h1 class="display-4 text-center">Welcome to 1-Stop Music</h1>
-                <p class="lead text-center">Your 1-Stop site for artists info, discography, tour info, and videos.</p>
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div id="search-headings" class="col-6 text-center">
-                        <h1>Search for an Artist</h1>
-                        <br>
-                        <p>Type an artist name and click on "Search". Then, click on any album from the results to play 30 seconds of its first track.</p>
-                        <form id="search-form">
-                            <input type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name" />
-                            <input type="submit" id="search" class="btn btn-primary" value="Search" />
-                        </form>
-                        <div id="results"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" id="menu-item" href="#">ABOUT US<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
         </div>
-
-        <!-- ///pic/bio// -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <div class="card">
-                        <img class="card-img-top" src="brunomarsPic.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h1>Bruno Mars</h1>
-                            <div id="social-media">
-                                <img class="twitter mx-1" src="assets/twitter.svg" alt="" href="" width="30px" height="30px">
-                                <img class="facebok mx-1" src="assets/facebook.svg" alt="" href="" width="30px" height="30px">
-                                <img class="instagram mx-1" src="assets/instagram.svg" alt="" href="" width="30px" height="30px">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">Album</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+      </nav>
+    </div>
+    <div class="container mt-5">
+      <h1 class="display-4 text-center">Welcome to 1-Stop Music</h1>
+      <p class="lead text-center">Your 1-Stop site for artists info, discography, tour info, and videos.</p>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div id="search-headings" class="col-6 text-center">
+          <h1>Search for an Artist</h1>
+          <br>
+          <p>Type an artist name and click on "Search". Then, click on any album from the results to play 30 seconds of its first track.</p>
+            <input type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name" />
+            <button id="search" class="btn btn-primary" value="">Search</button>
+          <div id="results"></div>
         </div>
-        <hr>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 text-center">
-                    <h4>Tour Info</h4>
-                    <div class="overflow-scroll-gradient">
-                        <div class="overflow-scroll-gradient__scroller">
-                            <ul style="list-style: none">
-                                <li>SEPTEMBER 7, 2018 DENVER, CO PEPSI CENTER</li>
-                                <li>SEPTEMBER 8, 2018 DENVER, CO PEPSI CENTER</li>
-                                <li>SEPTEMBER 11, 2018 ST. PAUL, MN XCEL ENERGY CENTER</li>
-                                <li>SEPTEMBER 12, 2018 ST. PAUL, MN XCEL ENERGY CENTER</li>
-                                <li>SEPTEMBER 15, 2018 DETROIT, MI LITTLE CAESARS ARENA</li>
-                                <li>SEPTEMBER 16, 2018 DETROIT, MI LITTLE CAESARS ARENA</li>
-                                <li>SEPTEMBER 19, 2018 PHILADELPHIA, PA WELLS FARGO CENTER</li>
-                                <li>SEPTEMBER 20, 2018 PHILADELPHIA, PA WELLS FARGO CENTER</li>
-                                <li>SEPTEMBER 22, 2018 TORONTO, ON AIR CANADA CENTRE</li>
-                                <li>SEPTEMBER 23, 2018 TORONTO, ON AIR CANADA CENTRE</li>
-                                <li>SEPTEMBER 27, 2018 BOSTON, MA TD GARDEN</li>
-                                <li>SEPTEMBER 2, 2018 BOSTON, MA TD GARDEN</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-7 text-center">
-                    <h4>Videos</h4>
+      </div>
+    </div>
+  </div>
 
-                    <body>
-
-                        <iframe width="250" height="250" src="https://www.youtube.com/embed/LsoLEjrDogU">
-
-                        </iframe>
-                        <iframe width="250" height="250" src="https://www.youtube.com/embed/PMivT7MJ41M">
-
-                        </iframe>
-                        <iframe width="250" height="250" src="https://www.youtube.com/embed/UqyT8IEBkvY">
-
-                        </iframe>
-                        <iframe width="250" height="250" src="https://www.youtube.com/embed/nPvuNsRccVw">
-
-                        </iframe>
-
-
-
-                    </body>
-                </div>
-            </div>
+    <!-- ///pic/bio// -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <div class="card">
+          <img class="card-img-top" src="brunomarsPic.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h1>Bruno Mars</h1>
+        <div id="social-media">
+          <img class="twitter mx-1" src="assets/twitter.svg" alt="" href="" width="30px" height="30px">
+          <img class="facebok mx-1" src="assets/facebook.svg" alt="" href="" width="30px" height="30px">
+          <img class="instagram mx-1" src="assets/instagram.svg" alt="" href="" width="30px" height="30px">
         </div>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Album</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+        <tbody>
+          <tr>
+            <td>Mark</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>Mark</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>Mark</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+  <hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 text-center">
+      <h4>Tour Info</h4>
+    <div class="overflow-scroll-gradient">
+      <div class="overflow-scroll-gradient__scroller" >
+        <ul style="list-style: none">
+          <li>SEPTEMBER 7, 2018 DENVER, CO PEPSI CENTER</li>
+          <li>SEPTEMBER 8, 2018 DENVER, CO PEPSI CENTER</li>
+          <li>SEPTEMBER 11, 2018 ST. PAUL, MN XCEL ENERGY CENTER</li>
+          <li>SEPTEMBER 12, 2018 ST. PAUL, MN XCEL ENERGY CENTER</li>
+          <li>SEPTEMBER 15, 2018 DETROIT, MI LITTLE CAESARS ARENA</li>
+          <li>SEPTEMBER 16, 2018 DETROIT, MI LITTLE CAESARS ARENA</li>
+          <li>SEPTEMBER 19, 2018 PHILADELPHIA, PA WELLS FARGO CENTER</li>
+          <li>SEPTEMBER 20, 2018 PHILADELPHIA, PA WELLS FARGO CENTER</li>
+          <li>SEPTEMBER 22, 2018 TORONTO, ON AIR CANADA CENTRE</li>
+          <li>SEPTEMBER 23, 2018 TORONTO, ON AIR CANADA CENTRE</li>
+          <li>SEPTEMBER 27, 2018 BOSTON, MA TD GARDEN</li>
+          <li>SEPTEMBER 2, 2018 BOSTON, MA TD GARDEN</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-7 text-center">
+      <h4>Videos</h4>
+    </div>
+  </div>
+</div>
 
 
 
@@ -176,19 +143,33 @@ curl_close($ch);
 
 
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <script>
-            var response = <?php echo json_encode($response); ?>;
-            response = JSON.parse(response);
-            console.log(response);
-        </script>
-    </body>
+    <script>
 
-    </html>
+    $("#search").on("click", function(){
+      artistName = $("#query").val();
+      $("#query").val("");
+
+      $.ajax({
+        url: '/searchArtist.php?artist=' + artistName,
+        method: 'GET'
+      })
+      .done(function(response) {
+        response = JSON.parse(response);
+        console.log(response);
+      });
+
+    });
+
+
+    </script>
+</body>
+
+</html>
